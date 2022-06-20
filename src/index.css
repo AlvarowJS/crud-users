@@ -36,11 +36,13 @@ font-family: 'Roboto', sans-serif;
   padding: 70px;
   color: var(--secondary-color);
   background-color: var(--background-color);
-  
+  margin: 0px 10px;
+  border-radius: 5px;
 
   display: flex;
   flex-direction: column;
   gap: 15px; 
+  
 }
 .userForm__nameComplete {
   display: flex;

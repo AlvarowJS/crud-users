@@ -43,7 +43,7 @@ const UsersForm = ({ createUser, reset, register, handleSubmit, updateUserById, 
                     <input type="text" id='password' {...register('password')} />
                 </div>
                 <div className='userForm__birthday'>
-                    <label htmlFor='birthday'>Birthay</label>
+                    <label htmlFor='birthday'>Birthday</label>
                     <input type="date" id='birthday' {...register('birthday')} />
                 </div>
                 <button className='userForm__button'>Enviar</button>
