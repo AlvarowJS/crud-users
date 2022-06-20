@@ -92,9 +92,9 @@ font-family: 'Roboto', sans-serif;
 .cardUser {
   background-color: var(--background-color);
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 0px;
   color: var(--secondary-color);
-  width: 300px;
+  width: 600px;
   margin: 0 10px;
 
   display: flex;
@@ -120,4 +120,10 @@ font-family: 'Roboto', sans-serif;
 }
 .cardUser__right button:first-child {
   color: var(--danger-color);
+}
+
+@media screen and (max-width: 768px) {
+  .cardUser{
+    width: 100%;
+  }
 }
