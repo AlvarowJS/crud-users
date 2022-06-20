@@ -22,14 +22,14 @@ function App() {
   }, [])
 
   const createUser = newUser => {
-    axios.post(URL, newUser)
+    axios.post(URL,newUser)
       .then(res => console.log(res.data))
       .catch(err => console.log(err))
-      .finally(() => getAllUsers)
+      .finally(() => getAllUsers())
   }
 
-  const updateMovieById = (id, updateMovie) => {
-    axios.patch(`${URL}${id}/`, updateMovie)
+  const updateUserById = (id, updateUser) => {
+    axios.patch(`${URL}${id}/`, updateUser)
       .then(res => console.log(res.data))
       .catch(err => console.log(err))
       .finally(() => {
@@ -51,30 +51,40 @@ function App() {
     setIsShowForm(!isShowForm)
   }
   return (
+
     <div className="App">
-      <UsersForm
+      <h1>CRUD - USERS</h1>
+      <button onClick={showForm}>{isShowForm ? 'Hide Form ': 'Create a new user'}</button>
+      {
+        isShowForm&&
+        <UsersForm
         createUser={createUser}
+        updateUserById={updateUserById}
+        objectUpdate={objectUpdate}
         handleSubmit={handleSubmit}
         reset={reset}
         register={register}
-        updateMovieById={updateMovieById}
-        objectUpdate={objectUpdate}
       />
-      {
-        users?.map(user => (
-          <UserList
-            key={user.id}
-            user={user}
-            URL={URL}
-            getAllUsers={getAllUsers}
-            setObjectUpdate={setObjectUpdate}
-            updateMovieById={updateMovieById}
-            setIsShowForm={setIsShowForm}
-            reset={reset}
-          />
-
-        ))
       }
+     
+      <div className='app__card'>
+        {
+          users?.map(user => (
+            <UserList
+              key={user.id}
+              user={user}
+              URL={URL}
+              getAllUsers={getAllUsers}
+              setObjectUpdate={setObjectUpdate}
+              updateMovieById={updateUserById}
+              setIsShowForm={setIsShowForm}
+              reset={reset}
+            />
+
+          ))
+        }
+      </div>
+
 
 
     </div>

@@ -22,13 +22,19 @@ const UserList = ({ user, URL, getAllUsers, setObjectUpdate, setIsShowForm, rese
         setObjectUpdate(user)
     }
     return (
-        <article>
-            <h2>{`${user.first_name}, ${user.last_name}`}</h2>
-            <p>{user.email}</p>
-            <p>{user.password}</p>
-            <p>{user.birthday}</p>
-            <button onClick={() => deleteUser(user.id)}>eliminar </button>
-            <button onClick={updateUser}>editar </button>
+        <article className='cardUser'>
+            <div className='cardUser__left'>
+                <h2>{`${user.first_name}, ${user.last_name}`}</h2>
+                <p>Email: {user.email}</p>
+                {/* <p>{user.password}</p> */}
+                <p><i class='bx bx-cake' ></i>{user.birthday}</p>
+            </div>
+            <div className='cardUser__right'>
+                <button onClick={() => deleteUser(user.id)} className="cardUser__right__delete"><i class='bx bx-trash'></i> </button>
+                <button onClick={updateUser} className="cardUser__right__edit"><i class='bx bx-edit-alt'></i> </button>
+            </div>
+
+
         </article>
     )
 }

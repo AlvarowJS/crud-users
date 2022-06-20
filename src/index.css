@@ -1,13 +1,123 @@
+:root{
+  --primary-color: #8FB9A8;
+  --secondary-color: #FEFAD4;
+  --info-color: #FCD0BA;
+  --danger-color: #F1828D;
+  --background-color: #765D69;
+
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--info-color);
+  font-family: 'Dancing Script', cursive;
+font-family: 'Roboto', sans-serif;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.App h1{
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--background-color);
+  border-top: 1px solid var(--background-color);
+}
+.App button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 18px;
+}
+.userForm {
+  background-color: var(--primary-color);
+  padding: 70px;
+  color: var(--secondary-color);
+  background-color: var(--background-color);
+  
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px; 
+}
+.userForm__nameComplete {
+  display: flex;
+  gap: 25px;
+}
+.userForm__name label{
+  display: block;
+}
+.userForm__lastname label{
+  display: block;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.userForm__email label{
+  display: block;
+}
+.userForm__password label {
+  display: block;
+}
+.userForm__birthday label {
+  display: block;
+}
+.userForm__birthday input{
+  color: var(--secondary-color);
+}
+
+.userForm input {
+  background-color: inherit;
+  color: var(--secondary-color);
+  border-style: none;
+  border-bottom: 1px solid var(--secondary-color);
+  outline: none;
+  width: 100%;
+  margin-top: 15px;
+}
+.userForm__button{
+  border: none;
+  padding: 5px;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  color: var(--secondary-color);
+}
+.app__card {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.cardUser {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  padding: 10px;
+  color: var(--secondary-color);
+  width: 500px;
+  margin: 0 10px;
+
+  display: flex;
+  justify-content: space-around;
+  
+}
+.cardUser__left p i {
+  margin-right: 10px;
+}
+.cardUser__right button {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  font-size: 30px;  
+  cursor: pointer;
+}
+
+.cardUser__right{
+  margin-top: 60px;
+}
+.cardUser__right button {
+  color: var(--primary-color)
+}
+.cardUser__right button:first-child {
+  color: var(--danger-color);
 }

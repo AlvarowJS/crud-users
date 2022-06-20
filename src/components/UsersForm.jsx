@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UsersForm = ({createUser, reset, register, handleSubmit, updateMovieById, objectUpdate}) => {
+const UsersForm = ({ createUser, reset, register, handleSubmit, updateUserById, objectUpdate }) => {
     const defaultValuesForm = {
         email: '',
         password: '',
@@ -10,42 +10,46 @@ const UsersForm = ({createUser, reset, register, handleSubmit, updateMovieById, 
     }
 
     const submit = data => {
-        if(objectUpdate.id !== undefined){
-            updateMovieById(objectUpdate.id, data)
+        if (objectUpdate !== undefined) {
+            updateUserById(objectUpdate.id, data)
             reset(defaultValuesForm)
         } else {
-            createUser(data)    
+            createUser(data)
         }
-        
         reset(defaultValuesForm)
     }
-  return (
-    <div>
-        <form onSubmit={handleSubmit(submit)}>
-            <div>
-                <label htmlFor='first_name'>First Name</label>
-                <input type="text" id='first_name' {...register('first_name')} />
-            </div>
-            <div>
-                <label htmlFor='last_name'>Last Name</label>
-                <input type="text" id='last_name' {...register('last_name')} />
-            </div>
-            <div>
-                <label htmlFor='email'>Email</label>
-                <input type="text" id='email' {...register('email')} />
-            </div>
-            <div>
-                <label htmlFor='password'>Password</label>
-                <input type="text" id='password' {...register('password')} />
-            </div>
-            <div>
-                <label htmlFor='birthday'>Birthay</label>
-                <input type="date" id='birthday' {...register('birthday')} />
-            </div>
-            <button>Submit</button>
-        </form>
-    </div>
-  )
+    return (
+        <div className=''>
+            <form className='userForm' onSubmit={handleSubmit(submit)}>
+                <h3>Register User</h3>
+                
+                <div className='userForm__nameComplete'>
+                    <div className='userForm__name'>
+                        <label htmlFor='first_name'>First Name</label>
+                        <input type="text" id='first_name' {...register('first_name')} />
+                    </div>
+                    <div className='userForm__lastname'>
+                        <label htmlFor='last_name'>Last Name</label>
+                        <input type="text" id='last_name' {...register('last_name')} />
+                    </div>
+
+                </div>
+                <div className='userForm__email'>
+                    <label htmlFor='email'>Email</label>
+                    <input type="text" id='email' {...register('email')} />
+                </div>
+                <div className='userForm__password'>
+                    <label htmlFor='password'>Password</label>
+                    <input type="text" id='password' {...register('password')} />
+                </div>
+                <div className='userForm__birthday'>
+                    <label htmlFor='birthday'>Birthay</label>
+                    <input type="date" id='birthday' {...register('birthday')} />
+                </div>
+                <button className='userForm__button'>Enviar</button>
+            </form>
+        </div>
+    )
 }
 
 export default UsersForm
